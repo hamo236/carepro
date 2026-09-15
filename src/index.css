@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --font-scale: 1;
+    --card-bg-light: #ffffff;
+    --card-border-light: #e2e8f0;
+  }
+  
+  .dark {
+    color-scheme: dark;
+    --card-bg-dark: #0b1120;
+    --card-border-dark: #1e293b;
+  }
+
+  /* Accessibility Text Scaling */
+  html.text-scale-normal {
+    font-size: 16px;
+  }
+  html.text-scale-large {
+    font-size: 18px;
+  }
+  html.text-scale-huge {
+    font-size: 20px;
+  }
+  
+  /* High Contrast Accessibility Mode */
+  html.high-contrast {
+    filter: contrast(1.15);
+  }
+  html.high-contrast .dark {
+    filter: contrast(1.25);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, sans-serif;
+  }
+
+  body {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+/* Apple-style Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.6);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.8);
+}
+
+/* High-Clarity Card Styles */
+.apple-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .apple-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.apple-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08);
+  border-color: #0066b2;
+}
+
+.dark .apple-card-hover:hover {
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.6);
+  border-color: #38bdf8;
+}
+
+/* High-Contrast Interactive Buttons */
+.btn-primary-action {
+  background-color: #0066b2;
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0, 102, 178, 0.25);
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-primary-action:hover {
+  background-color: #005596;
+  box-shadow: 0 4px 12px rgba(0, 102, 178, 0.35);
+  transform: translateY(-1px);
+}
+
+.dark .btn-primary-action {
+  background-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(2, 132, 199, 0.35), 0 2px 4px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.dark .btn-primary-action:hover {
+  background-color: #0369a1;
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.5), 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-color: rgba(56, 189, 248, 0.7);
+}
+
+.btn-secondary-action {
+  background-color: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-secondary-action:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.dark .btn-secondary-action {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark .btn-secondary-action:hover {
+  background-color: #334155;
+  border-color: #475569;
+  color: #ffffff;
+}
+
+/* Professional Healthcare Print System */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    font-family: 'Tajawal', -apple-system, system-ui, sans-serif !important;
+  }
+
+  /* Hide background elements, navigation, interactive controls */
+  header, 
+  footer, 
+  nav, 
+  button, 
+  .no-print,
+  [role="dialog"] > div:first-child,
+  .fixed.inset-0:not(.printable-modal) {
+    display: none !important;
+  }
+
+  /* Ensure printable area is visible and formatted */
+  .printable-area,
+  .printable-medical-report {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .printable-card {
+    border: 1px solid #94a3b8 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    page-break-inside: avoid;
+  }
+
+  /* Preserve colors and borders in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
