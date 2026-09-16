@@ -416,6 +416,19 @@ export const Header: React.FC<HeaderProps> = ({
             />
           </div>
 
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-pressed={theme === 'light'}
+            className="w-full rounded-2xl border border-amber-200/80 dark:border-slate-700 bg-amber-50/80 dark:bg-slate-800 px-3.5 py-3 text-right text-sm font-bold text-slate-800 dark:text-slate-100 flex items-center justify-between gap-3 cursor-pointer hover:bg-amber-100/80 dark:hover:bg-slate-700 transition-colors"
+          >
+            <span className="flex items-center gap-2">
+              {theme === 'light' ? <Sun className="w-4 h-4 text-amber-500" /> : <Moon className="w-4 h-4 text-sky-400" />}
+              <span>{theme === 'light' ? 'الوضع الصباحي مفعّل' : 'تفعيل الوضع الصباحي'}</span>
+            </span>
+            <span className="text-[11px] text-slate-500 dark:text-slate-400">{theme === 'light' ? 'اضغط للوضع الليلي' : 'اضغط للتفعيل'}</span>
+          </button>
+
           <div className="p-3 bg-blue-50/70 dark:bg-slate-800 rounded-2xl flex items-center justify-between text-xs text-slate-900 dark:text-slate-100 font-bold mb-2 border border-blue-100 dark:border-slate-700">
             <div className="flex items-center gap-1.5">
               <PhoneCall className="w-3.5 h-3.5 text-[#0071e3]" />

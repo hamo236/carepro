@@ -524,3 +524,24 @@ body,
   background: #bde9e5;
   color: #06324d;
 }
+
+/* Explicit morning theme: bright, warm-white surfaces with cool clinical ink. */
+html:not(.dark) body,
+html:not(.dark) #root {
+  background-color: var(--carepro-canvas) !important;
+  color: var(--carepro-ink);
+}
+
+html:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-color: var(--carepro-line) !important;
+}
+
+html:not(.dark) .apple-card {
+  background-color: var(--carepro-surface);
+}
+
+.dark body,
+.dark #root {
+  background-color: var(--carepro-canvas) !important;
+}
