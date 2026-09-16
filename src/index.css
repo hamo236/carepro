@@ -432,3 +432,95 @@
     gap: 0.125rem;
   }
 }
+
+/* CarePro visual color system: calm clinical navy for trust, teal for action,
+   and cool blue-gray surfaces for separation without visual noise. */
+:root {
+  --carepro-ink: #0b2f44;
+  --carepro-brand-950: #06324d;
+  --carepro-brand-900: #084a70;
+  --carepro-brand-700: #087ea4;
+  --carepro-brand-600: #0b93a5;
+  --carepro-accent: #14a6a1;
+  --carepro-canvas: #f4f8fb;
+  --carepro-surface: #ffffff;
+  --carepro-line: #d8e6ee;
+  --carepro-muted: #527083;
+}
+
+.dark {
+  --carepro-ink: #e6f3f7;
+  --carepro-canvas: #071923;
+  --carepro-surface: #0c2230;
+  --carepro-line: #214355;
+  --carepro-muted: #9bb7c5;
+}
+
+body,
+#root {
+  background-color: var(--carepro-canvas);
+}
+
+/* Normalize the repeated inline brand colors into the same palette. */
+[class*='bg-[#0066b2]'] {
+  background-color: var(--carepro-brand-900) !important;
+}
+
+[class*='text-[#0066b2]'],
+[class*='text-[#0070cd]'],
+[class*='text-[#0071e3]'] {
+  color: var(--carepro-brand-700) !important;
+}
+
+[class*='border-[#0066b2]'],
+[class*='border-[#0070cd]'] {
+  border-color: var(--carepro-brand-700) !important;
+}
+
+[class*='fill-[#0066b2]'] {
+  fill: var(--carepro-accent) !important;
+}
+
+[class*='bg-[#002b49]'] {
+  background-color: var(--carepro-brand-950) !important;
+}
+
+[class*='text-[#002b49]'] {
+  color: var(--carepro-ink) !important;
+}
+
+.apple-card {
+  border-color: var(--carepro-line);
+  box-shadow: 0 8px 24px -18px rgba(6, 50, 77, 0.45), 0 2px 6px rgba(6, 50, 77, 0.04);
+}
+
+.dark .apple-card {
+  border-color: var(--carepro-line);
+  background: var(--carepro-surface);
+  box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.7);
+}
+
+.btn-primary-action {
+  background-color: var(--carepro-brand-900);
+  box-shadow: 0 5px 14px rgba(8, 74, 112, 0.24);
+}
+
+.btn-primary-action:hover {
+  background-color: var(--carepro-brand-950);
+}
+
+.btn-secondary-action {
+  color: var(--carepro-ink);
+  border-color: var(--carepro-line);
+  background-color: color-mix(in srgb, var(--carepro-surface) 92%, var(--carepro-brand-700));
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--carepro-accent) 70%, white);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #bde9e5;
+  color: #06324d;
+}
