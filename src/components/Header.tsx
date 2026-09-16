@@ -347,14 +347,16 @@ export const Header: React.FC<HeaderProps> = ({
               id="btn-theme-toggle"
               type="button"
               onClick={toggleTheme}
-              className="p-2.5 text-slate-700 dark:text-slate-200 hover:text-[#0066b2] dark:hover:text-sky-300 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-xl transition-all cursor-pointer border border-slate-200 dark:border-slate-700 shadow-xs active:scale-95"
-              title={theme === 'dark' ? 'التحويل للوضع الطبيعي (النهاري)' : 'التحويل للوضع الليلي'}
+              aria-label={theme === 'dark' ? 'التحويل للوضع الصباحي' : 'التحويل للوضع الليلي'}
+              className="flex items-center justify-center gap-1.5 min-w-11 p-2.5 text-slate-700 dark:text-slate-200 hover:text-[#0066b2] dark:hover:text-sky-300 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-xl transition-colors cursor-pointer border border-slate-200 dark:border-slate-700 shadow-xs active:scale-95"
+              title={theme === 'dark' ? 'التحويل للوضع الصباحي' : 'التحويل للوضع الليلي'}
             >
               {theme === 'dark' ? (
                 <Sun className="w-4 h-4 text-amber-300 fill-amber-300/20" />
               ) : (
-                <Moon className="w-4 h-4 text-slate-700" />
+                <Moon className="w-4 h-4 text-slate-700 dark:text-slate-200" />
               )}
+              <span className="hidden sm:inline text-[11px] font-bold">{theme === 'dark' ? 'صباحي' : 'ليلي'}</span>
             </button>
 
             {/* Notification bell */}
