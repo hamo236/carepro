@@ -54,7 +54,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
   };
 
   return (
-    <section className="bg-slate-50 dark:bg-slate-950 pt-6 sm:pt-10 pb-10 sm:pb-12 border-b border-slate-200 dark:border-slate-800 transition-colors duration-200 font-['Tajawal',sans-serif]">
+    <section className="carepro-hero bg-slate-50 dark:bg-slate-950 pt-6 sm:pt-10 pb-10 sm:pb-12 border-b border-slate-200 dark:border-slate-800 transition-colors duration-200 font-['Tajawal',sans-serif]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Headline */}
@@ -106,7 +106,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
         </div>
 
         {/* Master Search Bar (Clean High-Contrast Form) */}
-        <div className="max-w-4xl mx-auto bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-3xl shadow-md border-2 border-slate-300/80 dark:border-slate-700">
+        <div className="carepro-search-panel max-w-4xl mx-auto bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-3xl shadow-md border-2 border-slate-300/80 dark:border-slate-700">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
             
             {/* Field 1: Specialty */}
@@ -239,4 +239,3 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
     </section>
   );
 };
-
