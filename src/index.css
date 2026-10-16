@@ -642,3 +642,454 @@ html:not(.dark) .apple-card {
     padding: 0.75rem !important;
   }
 }
+
+/* ========================================================================== *
+   CarePro redesign system
+   Direction: editorial clinical utility — quiet surfaces, strong hierarchy,
+   compact controls, and one unmistakable action color. Presentation only.
+   ========================================================================== */
+:root {
+  --ui-canvas: #f5f7f8;
+  --ui-surface: #ffffff;
+  --ui-surface-subtle: #eef3f5;
+  --ui-ink: #102b3a;
+  --ui-ink-soft: #58717d;
+  --ui-line: #d9e4e8;
+  --ui-brand: #0b6f88;
+  --ui-brand-deep: #084d64;
+  --ui-accent: #0d9488;
+  --ui-success: #087f5b;
+  --ui-danger: #b42318;
+  --ui-radius: 16px;
+  --ui-radius-sm: 12px;
+  --ui-shadow-1: 0 1px 2px rgba(16, 43, 58, 0.04), 0 8px 20px -16px rgba(16, 43, 58, 0.30);
+  --ui-shadow-2: 0 12px 32px -22px rgba(16, 43, 58, 0.42);
+}
+
+.dark {
+  --ui-canvas: #0b171d;
+  --ui-surface: #10232c;
+  --ui-surface-subtle: #152d38;
+  --ui-ink: #edf6f7;
+  --ui-ink-soft: #a8bdc4;
+  --ui-line: #284651;
+  --ui-brand: #55b7c4;
+  --ui-brand-deep: #27899b;
+  --ui-accent: #4cc5b3;
+  --ui-success: #55c99a;
+  --ui-danger: #ff8a80;
+  --ui-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.24), 0 10px 24px -18px rgba(0, 0, 0, 0.65);
+  --ui-shadow-2: 0 18px 40px -22px rgba(0, 0, 0, 0.76);
+}
+
+.carepro-app {
+  background: var(--ui-canvas) !important;
+  color: var(--ui-ink) !important;
+}
+
+.carepro-main {
+  isolation: isolate;
+}
+
+.carepro-header {
+  background: color-mix(in srgb, var(--ui-surface) 96%, transparent) !important;
+  border-color: var(--ui-line) !important;
+  box-shadow: 0 1px 0 rgba(16, 43, 58, 0.04), 0 10px 28px -24px rgba(16, 43, 58, 0.35) !important;
+}
+
+.carepro-utility-bar {
+  background: var(--ui-brand-deep) !important;
+  border-color: color-mix(in srgb, var(--ui-brand) 35%, transparent) !important;
+  min-height: 34px;
+}
+
+.carepro-main-nav-row {
+  min-height: 72px;
+  height: auto !important;
+  gap: 24px;
+}
+
+#brand-logo {
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
+#brand-logo > div:first-child {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: var(--ui-brand-deep) !important;
+  box-shadow: 0 8px 18px -12px color-mix(in srgb, var(--ui-brand) 80%, transparent) !important;
+}
+
+#brand-logo > div:first-child svg {
+  width: 21px;
+  height: 21px;
+}
+
+#brand-logo > div:last-child > div:first-child {
+  gap: 8px;
+}
+
+#brand-logo > div:last-child > div:first-child > span:first-child {
+  color: var(--ui-ink) !important;
+  font-size: 1.35rem;
+  letter-spacing: -0.035em;
+}
+
+#brand-logo > div:last-child > div:first-child > span:last-child {
+  color: var(--ui-brand) !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0.08em;
+}
+
+#brand-logo > div:last-child > span:last-child {
+  color: var(--ui-ink-soft) !important;
+  font-size: 10px;
+}
+
+.carepro-desktop-nav {
+  margin-inline: auto;
+  background: var(--ui-surface-subtle) !important;
+  border-color: var(--ui-line) !important;
+  border-radius: 13px !important;
+  padding: 4px !important;
+}
+
+.carepro-desktop-nav button {
+  min-height: 38px;
+  border-radius: 9px !important;
+  padding-inline: 13px !important;
+  color: var(--ui-ink-soft);
+}
+
+.carepro-desktop-nav button:hover,
+.carepro-desktop-nav button.bg-white {
+  color: var(--ui-brand) !important;
+}
+
+.carepro-desktop-nav button.bg-white,
+.carepro-desktop-nav button[class*='bg-white'] {
+  background: var(--ui-surface) !important;
+  box-shadow: var(--ui-shadow-1) !important;
+}
+
+.carepro-header-actions {
+  gap: 6px !important;
+}
+
+.carepro-header-actions > button,
+.carepro-header-actions > a {
+  min-height: 40px;
+  border-radius: 10px !important;
+}
+
+#btn-theme-toggle,
+#btn-notifications,
+#btn-mobile-menu {
+  border-color: var(--ui-line) !important;
+  background: var(--ui-surface) !important;
+  color: var(--ui-ink-soft) !important;
+}
+
+#btn-theme-toggle:hover,
+#btn-notifications:hover,
+#btn-mobile-menu:hover {
+  background: var(--ui-surface-subtle) !important;
+  color: var(--ui-brand) !important;
+}
+
+#btn-my-bookings {
+  background: var(--ui-brand) !important;
+  border-color: var(--ui-brand) !important;
+  box-shadow: 0 7px 16px -12px color-mix(in srgb, var(--ui-brand) 90%, transparent) !important;
+}
+
+#btn-my-bookings:hover {
+  background: var(--ui-brand-deep) !important;
+}
+
+.carepro-main section {
+  border-color: var(--ui-line);
+}
+
+.carepro-main [class*='bg-white'][class*='dark:bg-slate-900'],
+.carepro-main [class*='bg-white'][class*='dark:bg-slate-950'] {
+  background: var(--ui-surface) !important;
+  border-color: var(--ui-line) !important;
+  box-shadow: var(--ui-shadow-1);
+}
+
+.carepro-main [class*='rounded-3xl'] {
+  border-radius: var(--ui-radius) !important;
+}
+
+.carepro-main [class*='rounded-2xl'] {
+  border-radius: var(--ui-radius-sm) !important;
+}
+
+.carepro-main h1,
+.carepro-main h2,
+.carepro-main h3 {
+  color: var(--ui-ink);
+  letter-spacing: -0.025em;
+}
+
+.carepro-main p,
+.carepro-main label {
+  color: var(--ui-ink-soft);
+}
+
+.carepro-hero {
+  background: var(--ui-canvas) !important;
+  border-color: var(--ui-line) !important;
+  padding-top: clamp(30px, 5vw, 58px) !important;
+  padding-bottom: clamp(34px, 5vw, 64px) !important;
+}
+
+.carepro-hero::before {
+  display: none;
+}
+
+.carepro-hero h1 {
+  max-width: 700px;
+  margin-inline: auto;
+  font-size: clamp(2rem, 4vw, 3.65rem) !important;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.carepro-hero h1 > span {
+  color: var(--ui-brand) !important;
+}
+
+.carepro-hero > div > div:first-child > div:first-child {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  color: var(--ui-brand) !important;
+  box-shadow: none !important;
+}
+
+.carepro-hero > div > div:first-child > div:first-child svg {
+  display: none;
+}
+
+.carepro-hero > div > div:first-child > p {
+  max-width: 570px;
+  color: var(--ui-ink-soft) !important;
+}
+
+.carepro-search-panel {
+  background: var(--ui-surface) !important;
+  border: 1px solid var(--ui-line) !important;
+  border-radius: 18px !important;
+  box-shadow: var(--ui-shadow-2) !important;
+  padding: clamp(14px, 2.5vw, 24px) !important;
+}
+
+.carepro-search-panel input,
+.carepro-search-panel select {
+  color: var(--ui-ink) !important;
+}
+
+.carepro-search-panel input::placeholder {
+  color: color-mix(in srgb, var(--ui-ink-soft) 78%, transparent) !important;
+}
+
+.carepro-search-panel [class*='border-2'] {
+  border-width: 1px !important;
+  border-color: var(--ui-line) !important;
+  border-radius: 11px !important;
+}
+
+.carepro-search-panel [class*='focus-within:border'] {
+  border-color: var(--ui-brand) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ui-brand) 14%, transparent);
+}
+
+.carepro-search-panel button[id*='search-submit'] {
+  background: var(--ui-brand) !important;
+  border-radius: 11px !important;
+  min-height: 48px;
+  box-shadow: none !important;
+}
+
+.carepro-search-panel button[id*='search-submit']:hover {
+  background: var(--ui-brand-deep) !important;
+}
+
+.carepro-main button[class*='rounded-3xl'],
+.carepro-main button[class*='rounded-2xl'] {
+  border-color: var(--ui-line) !important;
+}
+
+.carepro-main button[class*='rounded-3xl']:not([class*='bg-[#0066b2]']):hover,
+.carepro-main button[class*='rounded-2xl']:not([class*='bg-[#0066b2]']):hover {
+  border-color: color-mix(in srgb, var(--ui-brand) 52%, var(--ui-line)) !important;
+  box-shadow: var(--ui-shadow-1);
+}
+
+.apple-card,
+.apple-card-hover {
+  border-color: var(--ui-line) !important;
+  border-radius: var(--ui-radius) !important;
+  box-shadow: var(--ui-shadow-1) !important;
+}
+
+.apple-card-hover:hover {
+  border-color: color-mix(in srgb, var(--ui-brand) 48%, var(--ui-line)) !important;
+  box-shadow: var(--ui-shadow-2) !important;
+}
+
+@media (max-width: 1023px) {
+  .carepro-main-nav-row {
+    gap: 10px;
+  }
+
+  #brand-logo > div:last-child > span:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .carepro-main-nav-row {
+    min-height: 64px;
+  }
+
+  #brand-logo > div:first-child {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+  }
+
+  #brand-logo > div:last-child > div:first-child > span:first-child {
+    font-size: 1.18rem;
+  }
+
+  .carepro-header-actions {
+    gap: 3px !important;
+  }
+
+  #btn-my-bookings {
+    width: 42px;
+    min-width: 42px;
+    padding-inline: 0 !important;
+    justify-content: center;
+  }
+
+  #btn-my-bookings > span:first-of-type {
+    display: none;
+  }
+
+  #mobile-navigation-drawer {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line) !important;
+    box-shadow: var(--ui-shadow-2) !important;
+  }
+
+  .carepro-hero h1 {
+    font-size: clamp(1.75rem, 8vw, 2.35rem) !important;
+  }
+
+  .carepro-hero h1 br {
+    display: none;
+  }
+
+  .carepro-main [class*='grid-cols-2'] {
+    gap: 10px;
+  }
+
+  .carepro-main [class*='p-6'] {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .apple-card-hover:hover {
+    transform: none !important;
+  }
+}
+
+/* Cross-surface finishing pass: dialogs, forms, footer, and mobile navigation. */
+[aria-label='التنقل الرئيسي للهاتف'] {
+  background: color-mix(in srgb, var(--ui-surface) 97%, transparent) !important;
+  border-color: var(--ui-line) !important;
+  box-shadow: 0 -12px 28px -24px rgba(16, 43, 58, 0.55) !important;
+}
+
+[aria-label='التنقل الرئيسي للهاتف'] button {
+  min-height: 48px;
+  border-radius: 10px !important;
+}
+
+[aria-label='التنقل الرئيسي للهاتف'] button.text-\[\#0066b2\],
+[aria-label='التنقل الرئيسي للهاتف'] button[class*='text-[#0066b2]'] {
+  color: var(--ui-brand) !important;
+}
+
+[aria-label='التنقل الرئيسي للهاتف'] button > span.absolute {
+  background: var(--ui-brand) !important;
+  height: 3px !important;
+  border-radius: 999px !important;
+}
+
+footer {
+  background: var(--ui-surface) !important;
+  border-color: var(--ui-line) !important;
+  color: var(--ui-ink-soft);
+}
+
+footer h2,
+footer h3,
+footer strong {
+  color: var(--ui-ink) !important;
+}
+
+footer a,
+footer button {
+  color: var(--ui-ink-soft);
+}
+
+footer a:hover,
+footer button:hover {
+  color: var(--ui-brand) !important;
+}
+
+[role='dialog'] > div:last-child,
+.fixed.inset-0[role='dialog'] > div {
+  background: var(--ui-surface) !important;
+  border-color: var(--ui-line) !important;
+  border-radius: var(--ui-radius) !important;
+  box-shadow: 0 26px 70px -28px rgba(16, 43, 58, 0.48) !important;
+}
+
+input,
+select,
+textarea {
+  border-color: var(--ui-line);
+  color: var(--ui-ink);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ui-brand) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ui-brand) 14%, transparent) !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ui-accent) 62%, white);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ui-accent) 26%, white);
+  color: var(--ui-ink);
+}

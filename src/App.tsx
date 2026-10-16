@@ -303,7 +303,7 @@ export default function App() {
   };
 
   return (
-    <div dir="rtl" className="min-h-screen bg-[#f8fafc] dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col font-['Tajawal',system-ui,sans-serif] transition-colors duration-200">
+    <div dir="rtl" className="carepro-app min-h-screen bg-[#f8fafc] dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col font-['Tajawal',system-ui,sans-serif] transition-colors duration-200">
       
       {/* Top Header */}
       <Header
@@ -332,7 +332,7 @@ export default function App() {
       />
 
       {/* Main View Router */}
-      <main className="flex-1 pb-20 md:pb-0">
+      <main className="carepro-main flex-1 pb-20 md:pb-0">
         {currentView === 'HOME' && (
           <HomeView
             doctors={doctors}

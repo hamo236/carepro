@@ -97,10 +97,10 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-xl bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/80 dark:border-slate-800/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] font-['Tajawal',sans-serif] transition-colors duration-200">
+    <header className="carepro-header sticky top-0 z-40 backdrop-blur-xl bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/80 dark:border-slate-800/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] font-['Tajawal',sans-serif] transition-colors duration-200">
       
       {/* Top Ergonomics & Utility Bar */}
-      <div className="bg-[#001f35] dark:bg-slate-950 text-slate-200 text-xs py-1.5 px-4 hidden md:block border-b border-slate-800/50">
+      <div className="carepro-utility-bar bg-[#001f35] dark:bg-slate-950 text-slate-200 text-xs py-1.5 px-4 hidden md:block border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-5">
             <div className="flex items-center gap-2 text-white font-medium">
@@ -178,8 +178,8 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Apple Clean Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="carepro-main-nav max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="carepro-main-nav-row flex items-center justify-between h-20">
           
           {/* Brand Logo with Clean Modern Typography */}
           <div 
@@ -202,7 +202,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/70 dark:bg-slate-800/60 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 text-xs font-bold">
+          <nav className="carepro-desktop-nav hidden lg:flex items-center gap-1 bg-slate-100/70 dark:bg-slate-800/60 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 text-xs font-bold">
             <button 
               id="nav-home"
               onClick={() => navigate('HOME')}
@@ -282,7 +282,7 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Right Action Icons & Theme Toggle */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="carepro-header-actions flex items-center gap-2 sm:gap-3">
             {/* Google Maps Grounding Explorer */}
             {onOpenMaps && (
               <button 
