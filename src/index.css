@@ -1093,3 +1093,533 @@ textarea:focus-visible {
   background: color-mix(in srgb, var(--ui-accent) 26%, white);
   color: var(--ui-ink);
 }
+
+/* Doctor card v2: identity and booking are two related, readable zones. */
+.doctor-card-redesign {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  overflow: hidden;
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line);
+  border-radius: 18px;
+  box-shadow: var(--ui-shadow-1);
+  color: var(--ui-ink);
+  transition: border-color 180ms ease-out, box-shadow 180ms ease-out;
+}
+
+.doctor-card-redesign:hover {
+  border-color: color-mix(in srgb, var(--ui-brand) 40%, var(--ui-line));
+  box-shadow: var(--ui-shadow-2);
+}
+
+.doctor-card__main {
+  min-width: 0;
+  padding: clamp(18px, 2.5vw, 28px);
+}
+
+.doctor-card__identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.doctor-card__heading {
+  min-width: 0;
+  flex: 1;
+}
+
+.doctor-card__eyebrow,
+.doctor-card__rating-row,
+.doctor-card__name-row,
+.doctor-card__footer,
+.doctor-card__booking-heading,
+.doctor-card__payment-note {
+  display: flex;
+  align-items: center;
+}
+
+.doctor-card__eyebrow {
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--ui-brand);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.doctor-card__location {
+  color: var(--ui-ink-soft);
+  font-weight: 700;
+}
+
+.doctor-card__name-row {
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.doctor-card__name-row h3 {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--ui-ink);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.doctor-card__name-row h3:hover {
+  color: var(--ui-brand);
+}
+
+.doctor-card__favorite {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ui-line);
+  border-radius: 10px;
+  background: var(--ui-surface);
+  color: var(--ui-ink-soft);
+  cursor: pointer;
+}
+
+.doctor-card__favorite:hover {
+  color: var(--ui-brand);
+  border-color: var(--ui-brand);
+}
+
+.doctor-card__favorite svg {
+  width: 17px;
+  height: 17px;
+}
+
+.doctor-card__favorite svg.is-favorite {
+  fill: var(--ui-brand);
+  color: var(--ui-brand);
+}
+
+.doctor-card__specialty {
+  margin: 4px 0 0;
+  color: var(--ui-ink-soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.doctor-card__rating-row {
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.doctor-card__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: #fff7df;
+  color: #8a5d00;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.dark .doctor-card__rating {
+  background: #3a2e13;
+  color: #ffd36b;
+}
+
+.doctor-card__rating svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.doctor-card__rating-row > button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ui-ink-soft);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.doctor-card__rating-row > button:hover {
+  color: var(--ui-brand);
+  text-decoration: underline;
+}
+
+.doctor-card__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--ui-success);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.doctor-card__verified svg {
+  width: 14px;
+  height: 14px;
+}
+
+.doctor-card__tags,
+.doctor-card__insurance {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.doctor-card__tags {
+  margin-top: 19px;
+  padding-top: 15px;
+  border-top: 1px solid var(--ui-line);
+}
+
+.doctor-card__tags span,
+.doctor-card__insurance span {
+  padding: 5px 8px;
+  border: 1px solid var(--ui-line);
+  border-radius: 7px;
+  background: var(--ui-surface-subtle);
+  color: var(--ui-ink-soft);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.doctor-card__insurance {
+  margin-top: 10px;
+  color: var(--ui-ink-soft);
+  font-size: 11px;
+}
+
+.doctor-card__insurance > svg {
+  width: 15px;
+  height: 15px;
+  color: var(--ui-brand);
+}
+
+.doctor-card__insurance strong {
+  color: var(--ui-ink);
+}
+
+.doctor-card__insurance em {
+  color: var(--ui-ink-soft);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.doctor-card__details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 17px;
+  padding: 14px;
+  border: 1px solid var(--ui-line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ui-surface-subtle) 65%, var(--ui-surface));
+}
+
+.doctor-card__details > div {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.doctor-card__details svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--ui-brand);
+}
+
+.doctor-card__details span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.doctor-card__details strong,
+.doctor-card__details small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doctor-card__details strong {
+  color: var(--ui-ink);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.doctor-card__details small {
+  color: var(--ui-ink-soft);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.doctor-card__footer {
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 17px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ui-line);
+}
+
+.doctor-card__footer button {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ui-brand);
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.doctor-card__footer button:hover {
+  text-decoration: underline;
+}
+
+.doctor-card__footer button svg:first-child {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+}
+
+.doctor-card__footer button svg:last-child {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+}
+
+.doctor-card__instant {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--ui-success) 10%, var(--ui-surface));
+  color: var(--ui-success);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.doctor-card__booking {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 20px;
+  border-inline-start: 1px solid var(--ui-line);
+  background: var(--ui-surface-subtle);
+}
+
+.doctor-card__booking-heading {
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.doctor-card__booking-heading > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ui-ink);
+  font-size: 13px;
+}
+
+.doctor-card__booking-heading svg {
+  width: 17px;
+  height: 17px;
+  color: var(--ui-brand);
+}
+
+.doctor-card__booking-heading > span {
+  color: var(--ui-ink-soft);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.doctor-card__days {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  padding: 4px;
+  border: 1px solid var(--ui-line);
+  border-radius: 11px;
+  background: var(--ui-surface);
+}
+
+.doctor-card__days button {
+  min-height: 48px;
+  padding: 5px 3px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ui-ink-soft);
+  cursor: pointer;
+}
+
+.doctor-card__days button.is-active {
+  background: var(--ui-brand);
+  color: #fff;
+  box-shadow: 0 6px 14px -10px var(--ui-brand);
+}
+
+.doctor-card__days button:hover:not(.is-active) {
+  background: var(--ui-surface-subtle);
+  color: var(--ui-brand);
+}
+
+.doctor-card__days strong,
+.doctor-card__days span {
+  display: block;
+}
+
+.doctor-card__days strong {
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.doctor-card__days span {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.doctor-card__slots-label {
+  margin: 17px 0 8px;
+  color: var(--ui-ink-soft);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.doctor-card__slots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  max-height: 140px;
+  overflow-y: auto;
+  padding-inline-end: 2px;
+}
+
+.doctor-card__slots button {
+  min-height: 36px;
+  padding: 6px 5px;
+  border: 1px solid var(--ui-line);
+  border-radius: 8px;
+  background: var(--ui-surface);
+  color: var(--ui-ink);
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.doctor-card__slots button:hover,
+.doctor-card__slots button.is-selected {
+  border-color: var(--ui-brand);
+  background: color-mix(in srgb, var(--ui-brand) 11%, var(--ui-surface));
+  color: var(--ui-brand);
+}
+
+.doctor-card__book-button {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: auto;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--ui-brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.doctor-card__book-button:hover:not(:disabled) {
+  background: var(--ui-brand-deep);
+}
+
+.doctor-card__book-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.doctor-card__book-button small {
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.doctor-card__payment-note {
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+  color: var(--ui-success);
+  font-size: 10px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.doctor-card__payment-note svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 900px) {
+  .doctor-card-redesign {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-card__booking {
+    border-top: 1px solid var(--ui-line);
+    border-inline-start: 0;
+  }
+
+  .doctor-card__slots {
+    max-height: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .doctor-card__identity {
+    gap: 11px;
+  }
+
+  .doctor-card__details {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-card__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .doctor-card__footer button span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-card-redesign {
+    transition: none;
+  }
+}
