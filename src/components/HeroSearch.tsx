@@ -54,11 +54,11 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
   };
 
   return (
-    <section className="carepro-hero bg-slate-50 dark:bg-slate-950 pt-6 sm:pt-10 pb-10 sm:pb-12 border-b border-slate-200 dark:border-slate-800 transition-colors duration-200 font-['Tajawal',sans-serif]">
+    <section className="home-hero carepro-hero bg-slate-50 dark:bg-slate-950 pt-6 sm:pt-10 pb-10 sm:pb-12 border-b border-slate-200 dark:border-slate-800 transition-colors duration-200 font-['Tajawal',sans-serif]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Headline */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+        <div className="home-hero__intro text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 bg-blue-50 dark:bg-slate-800 border border-blue-200 dark:border-slate-700 text-[#0066b2] dark:text-blue-400 text-xs font-black px-4 py-1.5 rounded-full mb-3 shadow-xs">
             <ShieldCheck className="w-4 h-4 text-[#0066b2] dark:text-blue-400" />
             <span>المنصة المعتمدة لحجز الأطباء والعيادات في مصر</span>
@@ -72,6 +72,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
           </p>
         </div>
 
+        <div className="home-hero__workspace">
         {/* Tab Selection (Clinic / Home Visit) */}
         <div className="max-w-4xl mx-auto mb-3 flex justify-start sm:justify-center overflow-x-auto pb-1 scrollbar-none">
           <div className="inline-flex bg-white dark:bg-slate-900 p-1 rounded-2xl border border-slate-300 dark:border-slate-700 shadow-xs">
@@ -234,7 +235,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
             <p className="text-xs text-slate-700 dark:text-slate-300 font-bold mt-0.5">تأكيد فوري للحجز</p>
           </div>
         </div>
-
+        </div>
       </div>
     </section>
   );

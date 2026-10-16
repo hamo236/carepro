@@ -66,7 +66,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
   onToggleFavorite
 }) => {
   return (
-    <div className="w-full font-['Tajawal',sans-serif] bg-[#f8fafc] dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-200">
+    <div className="home-page w-full font-['Tajawal',sans-serif] bg-[#f8fafc] dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-200">
       {/* Visual 'Upcoming Appointment' Toast/Badge Banner */}
       {bookings.length > 0 && (
         <UpcomingAppointmentBanner
@@ -90,7 +90,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       />
 
       {/* Instant Medical Specialties Discovery Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-slate-200 dark:border-slate-800">
+      <section className="home-specialties-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-slate-200 dark:border-slate-800">
         <SpecialtiesGrid
           selectedSpecialty={selectedSpecialty}
           onSelectSpecialty={(specId) => {
@@ -102,7 +102,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       {/* Services Grid (Doctorna Core Pillars) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section className="home-services-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
           <div>
             <h2 className="text-xl sm:text-2xl font-black text-[#002b49] dark:text-white">
@@ -120,7 +120,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="home-services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           
           {/* Service 1: Clinic Booking */}
           <div 
@@ -213,7 +213,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       {/* Featured Clinics / Doctors */}
-      <section className="bg-slate-50/70 dark:bg-slate-900/50 py-10 border-y border-slate-200 dark:border-slate-800">
+      <section className="home-doctors-section bg-slate-50/70 dark:bg-slate-900/50 py-10 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {doctors.length > 0 ? (
             <>
@@ -286,7 +286,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       {/* Compact Trust Bar */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section className="home-trust-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-800 text-[#0070cd] dark:text-blue-400 border border-slate-200/70 dark:border-slate-700 flex items-center justify-center shrink-0">
@@ -323,5 +323,3 @@ export const HomeView: React.FC<HomeViewProps> = ({
     </div>
   );
 };
-
-
